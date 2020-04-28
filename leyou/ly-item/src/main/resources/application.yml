@@ -1,0 +1,21 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: item-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver  # 新版本的驱动
+    url: jdbc:mysql:///leyou129?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: passw0rd
+mybatis:
+  type-aliases-package: com.leyou.item.entity
+  configuration:
+    map-underscore-to-camel-case: true  #驼峰映射
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+  instance:
+    ip-address: 127.0.0.1  #指定实例的地址
+    prefer-ip-address: true #上报给eureka的是ip，默认是主机名
